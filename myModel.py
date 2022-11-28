@@ -1,12 +1,18 @@
 import numpy as np
 import cv2 as cv
 from PIL import Image 
-from IPython.display import Image as show_image  
+from IPython.display import Image as show_image 
+import pandas as pd 
 
-
+""" from tensorflow import keras 
 from keras.applications.inception_resnet_v2 import InceptionResNetV2
 from keras.preprocessing import image
 from keras.applications.inception_resnet_v2 import preprocess_input, decode_predictions
+ """
+
+from tensorflow.keras.applications.inception_resnet_v2 import InceptionResNetV2
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.applications.inception_resnet_v2 import preprocess_input, decode_predictions
 
 IMAGE_PATH = "scar.jpg"
 model = InceptionResNetV2(weights='imagenet', classes=1000)
@@ -24,4 +30,8 @@ def predic(img_path):
 
 
 arr = predic(img_path=IMAGE_PATH)
-print(arr)
+
+df = pd.DataFrame(arr, columns=['ID', 'Name', 'Prediction'])
+
+
+print(df)

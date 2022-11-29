@@ -3,7 +3,18 @@ import cv2 as cv
 from PIL import Image 
 from IPython.display import Image as show_image 
 import pandas as pd 
-
+import seaborn as sns
+import tensorflow as tf
+from tensorflow import keras
+import plotly.express as px 
+import matplotlib.pyplot as plt
+import numpy as np
+print(sns.__version__)
+print(cv.__version__)
+print(Image.__version__)
+print(pd.__version__)
+print(tf.__version__)
+print(np.__version__)
 """ from tensorflow import keras 
 from keras.applications.inception_resnet_v2 import InceptionResNetV2
 from keras.preprocessing import image
